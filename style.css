@@ -1,0 +1,108 @@
+/* General Box Styling */
+.box {
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+    margin: 20px 0;
+    color: #333; /* Adding color for better contrast */
+}
+
+/* Current User Box */
+#current-user-box {
+    background-color: #e6f7ff;
+    text-align: center;
+    width: 80%;
+    max-width: 400px; /* Limiting max-width for better appearance */
+    margin: 20px auto; /* Centered alignment */
+    padding: 20px; /* Added padding for better spacing */
+}
+
+/* Products Box */
+#products-box {
+    background-color: #e6ffe6;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px; /* Limiting max-width for better appearance */
+    margin: 0 auto; /* Centered alignment */
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.product img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Shopping Cart Box */
+#shopping-cart-box {
+    background-color: #fff6e6;
+    padding: 20px;
+    max-width: 1200px; /* Limiting max-width for better appearance */
+    margin: 20px auto; /* Centered alignment */
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto; /* Responsive table */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tfoot {
+    text-align: center;
+}
+
+.total-price {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product {
+        width: 100%;
+        max-width: 300px; /* Adjust product width on smaller screens */
+    }
+
+    #products-box {
+        width: 100%;
+    }
+
+    #current-user-box, #shopping-cart-box {
+        width: 95%;
+    }
+}

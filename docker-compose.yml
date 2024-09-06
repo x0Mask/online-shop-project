@@ -1,0 +1,37 @@
+services:
+    php:
+        build: .
+        ports:
+            - "8082:80"
+        volumes:
+            - .:/var/www/html
+        networks:
+            - shop-network
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: root_password
+            MYSQL_DATABASE: shopdb
+            MYSQL_USER: sql_user
+            MYSQL_PASSWORD: sql_password
+        ports:
+            - "3309:3306"
+        networks:
+            - shop-network
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_HOST: mysql
+            MYSQL_ROOT_PASSWORD: sql_password
+        ports:
+            - "8083:80"
+        depends_on:
+            - mysql
+        networks:
+            - shop-network
+
+networks:
+    shop-network:
+        driver: bridge
